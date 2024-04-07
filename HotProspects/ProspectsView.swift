@@ -68,11 +68,29 @@ struct ProspectsView: View {
     var body: some View {
         NavigationStack {
             List(prospects, selection: $selectedProspects) { prospect in
-                VStack(alignment: .leading) {
-                    Text(prospect.name)
-                        .font(.headline)
-                    Text(prospect.emailAddress)
-                        .foregroundStyle(.secondary)
+                HStack{
+                    VStack(alignment: .leading) {
+                        Text(prospect.name)
+                            .font(.headline)
+                        
+                        Text(prospect.emailAddress)
+                            .foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    Spacer()
+                    // ✅ challenge 1
+                    if filter == .none{
+                        Image(
+                            systemName: (
+                                prospect.isContacted == true
+                                ?
+                                    "person.crop.circle.badge.xmark"
+                                :
+                                    "person.crop.circle.fill.badge.checkmark"
+                            )
+                        )
+                        .foregroundStyle((prospect.isContacted == true ? .green : .gray))
+                    }
                 }
                 // → ...a way to move people between the Contacted and Uncontacted tabs
                 // → This will allow users to swipe on any person in the list, then tap a single option to move them between the tabs.
