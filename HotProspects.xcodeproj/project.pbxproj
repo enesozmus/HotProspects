@@ -15,6 +15,7 @@
 		DF838C402BC01AF700DEFA94 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF838C3F2BC01AF700DEFA94 /* Prospect.swift */; };
 		DF838C422BC01CA900DEFA94 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF838C412BC01CA900DEFA94 /* MeView.swift */; };
 		DF838C452BC0425D00DEFA94 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = DF838C442BC0425D00DEFA94 /* CodeScanner */; };
+		DF946E7D2BC2E03600A493E4 /* EditProspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF946E7C2BC2E03600A493E4 /* EditProspectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DF838C3D2BC019A000DEFA94 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		DF838C3F2BC01AF700DEFA94 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		DF838C412BC01CA900DEFA94 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		DF946E7C2BC2E03600A493E4 /* EditProspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProspectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				DF838C3D2BC019A000DEFA94 /* ProspectsView.swift */,
 				DF838C412BC01CA900DEFA94 /* MeView.swift */,
 				DF838C3F2BC01AF700DEFA94 /* Prospect.swift */,
+				DF946E7C2BC2E03600A493E4 /* EditProspectView.swift */,
 				DF838C332BC0180C00DEFA94 /* Assets.xcassets */,
 				DF838C352BC0180C00DEFA94 /* Preview Content */,
 			);
@@ -158,6 +161,7 @@
 				DF838C402BC01AF700DEFA94 /* Prospect.swift in Sources */,
 				DF838C322BC0180B00DEFA94 /* ContentView.swift in Sources */,
 				DF838C302BC0180B00DEFA94 /* HotProspectsApp.swift in Sources */,
+				DF946E7D2BC2E03600A493E4 /* EditProspectView.swift in Sources */,
 				DF838C422BC01CA900DEFA94 /* MeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

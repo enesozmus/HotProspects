@@ -69,12 +69,17 @@ struct ProspectsView: View {
         NavigationStack {
             List(prospects, selection: $selectedProspects) { prospect in
                 HStack{
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        
-                        Text(prospect.emailAddress)
-                            .foregroundStyle(.secondary)
+                    // ✅ challenge 2
+                    NavigationLink {
+                        EditProspectView(prospect: prospect)
+                    } label : {
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            
+                            Text(prospect.emailAddress)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                     Spacer()
                     Spacer()
