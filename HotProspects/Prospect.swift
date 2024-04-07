@@ -10,8 +10,9 @@ import SwiftUI
 
 // → In our app we have a TabView that contains three instances of ProspectsView, and we want all three of those to work as different views on the same shared data.
 // → In SwiftData terms, this means they all access the same model context, but using slightly different queries.
+// → ✅ challenge 3
 @Model
-class Prospect {
+class Prospect : Comparable {
     var name: String
     var emailAddress: String
     var isContacted: Bool
@@ -20,6 +21,11 @@ class Prospect {
         self.name = name
         self.emailAddress = emailAddress
         self.isContacted = isContacted
+    }
+    
+    // → ✅ challenge 3
+    static func <(lhs: Prospect, rhs: Prospect) -> Bool {
+        return lhs.name < rhs.name
     }
 }
 

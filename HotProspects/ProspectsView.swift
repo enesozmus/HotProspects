@@ -53,7 +53,10 @@ struct ProspectsView: View {
     // → Our basic SwiftData query looks like this:
     // → By default that will load all Prospect model objects, sorting them by name,
     // → and while that's fine for the Everyone tab it's not enough for the other two.
-    @Query(sort: \Prospect.name) var prospects: [Prospect]
+    // @Query(sort: \Prospect.name) var prospects: [Prospect]
+    // → ✅ challenge 3
+    @State private var sortingOpt = false
+    @Query() var prospects: [Prospect]
     // → Our model context
     @Environment(\.modelContext) var modelContext
     
@@ -67,7 +70,9 @@ struct ProspectsView: View {
     
     var body: some View {
         NavigationStack {
-            List(prospects, selection: $selectedProspects) { prospect in
+            // → ✅ challenge 3
+            // List(prospects, selection: $selectedProspects) { prospect in
+            List((sortingOpt ? prospects.sorted() : prospects), selection: $selectedProspects){ prospect in
                 HStack{
                     // ✅ challenge 2
                     NavigationLink {
@@ -128,6 +133,12 @@ struct ProspectsView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Scan", systemImage: "qrcode.viewfinder") {
                         isShowingScanner = true
+                    }
+                }
+                // → ✅ challenge 3
+                ToolbarItem(placement: .topBarTrailing){
+                    Button("Sort", systemImage: "list.bullet.indent"){
+                        sortingOpt.toggle()
                     }
                 }
                 ToolbarItem(placement: .topBarLeading) {
